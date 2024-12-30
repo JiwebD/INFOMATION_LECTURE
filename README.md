@@ -6,7 +6,7 @@
 01_응용SW 기초 기술 활용
 ======
 
-[네트워크 기초]([[네티워크 기초/OSI LAYER/네트워크 계층(2024.12.27).txt](https://github.com/JiwebD/INFOMATION_LECTURE/blob/main/%EB%84%A4%ED%8B%B0%EC%9B%8C%ED%81%AC%20%EA%B8%B0%EC%B4%88/OSI%20LAYER/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%20%EA%B3%84%EC%B8%B5(2024.12.27).txt](https://github.com/JiwebD/INFOMATION_LECTURE/tree/main/%EB%84%A4%ED%8B%B0%EC%9B%8C%ED%81%AC%20%EA%B8%B0%EC%B4%88/OSI%20LAYER))
+네트워크 기초
 ------
 미들웨어 기초
 ------
