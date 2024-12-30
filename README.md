@@ -2,20 +2,16 @@
 정보처리산업기사 과정평겨형 수업 내용 정리 REPO입니다.
 
 
-# 제목 1
-## 제목 2
-### 제목 3
-#### 제목 4
-##### 제목 5
-###### 제목 6
 
-
-제목 1
+01_응용SW 기초 기술 활용
 ======
 
-제목 2
+[네트워크 기초]([[네티워크 기초/OSI LAYER/네트워크 계층(2024.12.27).txt](https://github.com/JiwebD/INFOMATION_LECTURE/blob/main/%EB%84%A4%ED%8B%B0%EC%9B%8C%ED%81%AC%20%EA%B8%B0%EC%B4%88/OSI%20LAYER/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%20%EA%B3%84%EC%B8%B5(2024.12.27).txt](https://github.com/JiwebD/INFOMATION_LECTURE/tree/main/%EB%84%A4%ED%8B%B0%EC%9B%8C%ED%81%AC%20%EA%B8%B0%EC%B4%88/OSI%20LAYER))
 ------
-
+미들웨어 기초
+------
+데이터베이스 기초
+------
 
 이텔릭체는 *별 기호(Asterisks)* 혹은 _언더바 기호(Underscore)_ 를 사용하세요.
 두껍게는 **별 기호(asterisks)** 혹은 __언더바 기호(underscore)__ 를 2번씩 사용하세요.
