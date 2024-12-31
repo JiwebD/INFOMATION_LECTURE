@@ -6,7 +6,7 @@
 01_응용SW 기초 기술 활용
 ======
 
-[네트워크 기초](https://github.com/JiwebD/INFOMATION_LECTURE/tree/2f09d1328a6a07b9d674647ba173e767038449b5/%EB%84%A4%ED%8B%B0%EC%9B%8C%ED%81%AC%20%EA%B8%B0%EC%B4%88)
+[네트워크 기초](https://github.com/JiwebD/INFOMATION_LECTURE/tree/069b1370e3f7985a9ab21966dc49524749cf093a/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%20%EA%B8%B0%EC%B4%88)
 ------
 미들웨어 기초
 ------
