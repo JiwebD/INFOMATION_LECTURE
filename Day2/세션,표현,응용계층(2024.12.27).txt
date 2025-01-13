@@ -1,0 +1,39 @@
+OSI Layer7
+1. Layer 물리계층	
+2. Layer 데이터링크계층(physical)	
+3. Layer 네트워크 계층(Network)
+
+	
+4. Layer 전송계층	(transport)
+
+
+5. Layer 세션계층(session)  -  통신 세션(연결)의 설정, 관리, 종료 담당
+6. Layer 표현계층(presentation) - 데이터의 형식(포맷) 변환과 암호화/복호화를 담당.
+                                        = 시스템 간 호환을 위한 데이터 변환
+7. Layer 응용계층(application) - 사용자와 네트워크 간 상호작용을 제공하는 인터페이스.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
