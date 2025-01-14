@@ -1,0 +1,22 @@
+crow's foot model
+-> workbench
+
+file - new model -db 더블클릭
+-name 설정, Add Diagram더블클릭
+-tbl 생성, 칼럼 작성
+
+왜래키 옵션 CASCADE 설정해주기
+
+
+Database-Forward Engineer
+
+CASCADE
+부모가 업데이트 되면 FK도 자동 업데이트
+
+PK,FK 
+
+사람    고유번호
+a           1
+b           2
+c	3
+

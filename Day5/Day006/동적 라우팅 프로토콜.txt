@@ -1,0 +1,69 @@
+동적 라우팅 프로토콜 (DYNAMIC ROUTING PROTOCOL)
+
+Route : 경로
+Router : 경로안내장치
+Routing : 경로안내작업
+Protocol : 통신을 위한 프로그램
+
+
+정적 - static/default
+
+
+
+동적 - IGP/EGP
+
+전체 네트워크를 학습하고 최적화 경로를 산출하는 방법.
+
+
+
+// IGP
+     - DISTANCE VECTOR : RIPv2
+AS
+     - LINK-STATE : OSPF
+
+AS(Autonomous System) : 자치 시스템 (관리자에 의해 관리되는 라우터의 집합/집단)
+ASBR : 서로다른 AS들이 통신 할려면 ASBR을 통해 연결해야한다.
+
+IGP (Interior Gateway Protocol)
+EGP (Exterior Gateway Protocol)
+
+Distatnce Vector : RIpv2
+거리 백터
+최적 경로를 산출하기위해
+HOP(장치단위)으로 산출하는 방식.
+전체네트워크 학습 -> 최적경로 산출
+
+Loop 현상 문제 발생
+-> HOP 카운트 제한(15HOP)
+-> 학습 거리가 짧다.
+-> 대규모에 쓰이지 않는다.
+
+
+
+// EGP
+  - BGP
+
+EGP
+서로 다른 ASBR을 연결하기 위한 프로토콜.
+
+
+Routing 시험
+실습 문제 예제 6번
+
+ip, rip 설정하고 ping test
+
+DNS server 설정, web server 설정
+
+피시에 dns ip 등록
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,71 @@
+
+			         요청
+ Server			<-----------------               Client
+-제공하다			                                     - 를 요구하는 주체
+ 제공할 수 있는 주체	----------------->
+			         제공
+
+-------------------------------------------------------------------------------------------------
+Server(하드웨어) Com   |		NetWork		      |	Client(하드웨어) Com
+		     |				      |
+Service(프로그램)	     |	IP			IP    |	Client 접속
+		     |				      |
+--------------------------------------------------------------------------------------------------
+
+
+DNS Server / Service / System
+
+
+DNS Server
+
+DN : 문자주소, 숫자주소를 가지고있다.
+ www.naver.com  (문자형태 주소)  IP 223.130.200.236 (숫자형태 주소)
+
+
+www.naver.com 검색
+=>DNS Server에서 www.naver.com의 숫자주소 탐색
+=>접속
+
+223.130.200.236 ->www.naver.com
+
+DNS Server
+== 사용자가 문자주소와 숫자주소를 함께 저장하고 거기에 맞는 값을 알려주는 서버 
+
+
+
+
+HTTP
+Hyper Text
+
+Transfer	:
+Protocol	:
+하이퍼텍스트 형 문서파일을 전달하기 위해 사용되는 네트워크 프로토콜
+
+문서와 문서간에 빠른 전달을 위해 묶어놓은 문서파일
+
+
+
+HTML
+Hyper Text
+Markup
+Language
+
+
+WEB Server
+|
+|
+|
+|
+|
+
+Http Request
+Http Response
+
+
+
+
+
+
+
+
+

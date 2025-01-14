@@ -1,0 +1,143 @@
+
+git생성할 폴더 만들고TEST > 경로 주소창에 cmd 실행 > git init 명령어 입력
+> 생성된 폴더 숨긴항목 표시 > .git 폴더 확인
+------------------------------------------
+생성
+
+git init           : 초기파일 생성
+git add          : SA 에 WD 변경사항 저장
+git commit -m : COMMIT 시점 지정(버전기록)
+git reset         : 이전 버전으로 돌아가기
+------------------------------------------
+1.aaa.txt 생성
+
+2.git init     
+
+3.git status   
+
+4.git add aaa.txt
+
+5.git commit -m V0.0
+
+*** Please tell me who you are메시지 뜨면
+------------------------------------------------
+git config --global user.email gkdlfnzo12@naver.com
+git config --global user.name JiwebD
+git config --global --list
+
+C:\Users\Administrator 에 저장됨.
+------------------------------------------------
+
+git log
+git log --oneline
+
+
+bbb.txt 메모장 생성
+git add *
+git commit -m "V0.1 bbb.txt added"
+git log --oneline
+
+ccc.txt 메모장 생성
+git add *
+git commit -m "V0.2 ccc.txt added"
+git log --oneline
+
+working Directory
+Staging Area(스테이지)
+빈상태
+
+Local Repository(로컬 저장소)
+V0.0
+V0.1
+V0.2 
+저장된 상태
+
+
+------------------------------------------
+리셋
+--hard     WD(x)    SA(x)  head(이동)
+--soft      WD(o)    SA(o)  head(이동)
+--mixed   WD(o)    SA(x)  head(이동)
+------------------------------------------
+  되돌리기
+  - git reset --soft
+  - git reset --hard
+  - git option
+    - hard : 돌아간 커밋 이후의 변경 이력을 전부 삭제
+    - soft : 변경 이력 삭제, 변경 내용은 남아있음, 인덱스 초기화(git add가 안되어 있는 상태)
+    - mixed : 변경 이력 삭제, 변경 내용은 남이있음, 인덱스도 유지(git add까지 되어 있음) 
+
+
+C:\정처산기공유\TEST>git log --oneline
+578ae55 (HEAD -> master) V0.2 ccc.txt added
+5a8b81c V0.1 bbb.txt added
+5b5b112 V0.0
+
+git reset --hard 5a8b81c
+git status
+git log --oneline
+git reflog
+git reset --hard 578ae55
+git log --oneline
+
+git reset --soft 5b5b112
+git log --oneline
+git status
+git reflog
+
+git reset --hard 578ae55
+git log --oneline
+git reset --mixed 5b5b112
+git log --oneline
+git status
+
+
+
+
+
+------------------------------------------------
+문제
+0 새폴더에서 git init 명령어 사용
+git init
+
+1 aaa.txt 파일을 추가하고 내용입력(아무거나) 
+aaa.txt 새로만들기
+
+
+2 SA 에 추가후 Commit(message V0.0)
+git add *
+git commit -m V0.0
+
+2 bbb.txt 파일을 추가하고 내용입력(아무거나) 
+bbb.txt 새로만들고 bbb 입력
+
+3 SA 에 추가후 Commit(message V0.1)
+git add *
+git commit -m V0.1
+
+4 ccc.txt 파일을 추가하고 내용입력(아무거나) 
+ccc.txt 새로만들고 ccc입력
+
+5 SA 에 추가후 Commit(message V0.2)
+git add *
+git commit -m V0.2
+
+6 V0.0 으로 --hard 옵션 이동 (확인 - WD/SA/HEAD)
+git log --oneline
+3566822 (HEAD -> master) V0.2
+4723beb V0.1
+10d3402 V0.0
+
+git reset --hard 10d3402
+
+git log                      ->head 확인
+git log --oneline으로     -> head 확인
+
+7 V0.2 으로 복귀(reflog)
+
+8 V0.1 으로 --soft 옵션 이동 (확인 - WD/SA/HEAD)
+
+9 V0.2 으로 복귀(reflog)
+
+10 V0.0 으로 --mixed 옵션 이동 (확인 - WD/SA/HEAD)
+
