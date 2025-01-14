@@ -32,9 +32,10 @@ git remote -v     원격저장소 정보 조회
 origin  https://github.com/JiwebD/MYREPOSITORY.git (fetch)
 origin  https://github.com/JiwebD/MYREPOSITORY.git (push)
 
+git branch -M main      //현재 사용중인 branch이름을 main으로 강제 변경
 
-git push origin    로컬 저장소의 변경 사항을 원격 저장소에 업로드
-                       origin = 원격저장소 기본이름 
+git push -u origin main    로컬 저장소의 변경 사항을 원격 저장소에 업로드, 로컬/원격 branch main을 연결
+                       origin = 원격저장소 기본이름                                 연결된 후엔 git push명령어만으로 push됨.
 
 인증 하기
 
@@ -42,20 +43,85 @@ git push origin    로컬 저장소의 변경 사항을 원격 저장소에 업�
 
 
 ----------------------------
-clone
+clone        // 원격저장소의 원하는 repository 하나의 내용 전체를 Local 저장소 (데스크탑)으로 가져온다.
 ----------------------------
 repository에 master  코드 복사
 
 git clone https://github.com/JiwebD/MYREPOSITORY.git   (코드 붙여넣기)
 
 
+----------------------------
+pull       // 원격저장소에서 수정된 repository를 가져온다.   변경사항을 병합해서 가져온다.
+----------------------------
+
+git pull
+
+
+----------------------------
+fetch       // 원격저장소에서 최신 커밋과 데이터를 가져온다.  Local 브랜치와 병합되기 전 로컬에서 확인할 수 있다.
+----------------------------
+git fetch origin      //원격 저장소에서 최신 변경 사항 가져오기
+git diff origin/main    //변경내용 확인
+git merge origin/main   //병합 수행
 
 
 
+C:\정처산기공유\새 폴더\test4>git log origin/main                                
+commit 0ef5371af68d58e6f88c9865ab077e5449285650 (origin/main, origin/HEAD)      //fetch로 가져와서 로컬 브랜치에 병합되지않음.
+Author: JiwebD <145487843+JiwebD@users.noreply.github.com>
+Date:   Wed Jan 15 01:48:13 2025 +0900
+
+    Update eee.txt
+
+commit cb0b41af99725dc6d88038cb0203164f334a86f9 (HEAD -> main)
+Author: JiwebD <145487843+JiwebD@users.noreply.github.com>
+Date:   Wed Jan 15 01:33:15 2025 +0900
+
+    Create eee.txt
+
+commit b7dbfe96ef1aa6520307e2bb141e6e3e46a31889
+Author: JwebD <gkdlfnzo12@naver.com>
+Date:   Wed Jan 15 01:26:42 2025 +0900
+
+    add ddd.txt
+
+commit 60bbb78bb9d17b4a4e49414d363fdca82ac341fb
+Author: JwebD <gkdlfnzo12@naver.com>
+Date:   Wed Jan 15 01:04:23 2025 +0900
+
+    V0.0
+
+git merge origin/main    // 원격 origin/main 을 로컬 main브랜치에 병합
 
 
+C:\정처산기공유\새 폴더\test4>git log --oneline
+0ef5371 (HEAD -> main, origin/main, origin/HEAD) Update eee.txt        //병합됨.
+cb0b41a Create eee.txt
+b7dbfe9 add ddd.txt
+60bbb78 V0.0
 
+C:\정처산기공유\새 폴더\test4>git log origin/main
+commit 0ef5371af68d58e6f88c9865ab077e5449285650 (HEAD -> main, origin/main, origin/HEAD)
+Author: JiwebD <145487843+JiwebD@users.noreply.github.com>
+Date:   Wed Jan 15 01:48:13 2025 +0900
 
+    Update eee.txt
 
+commit cb0b41af99725dc6d88038cb0203164f334a86f9
+Author: JiwebD <145487843+JiwebD@users.noreply.github.com>
+Date:   Wed Jan 15 01:33:15 2025 +0900
 
+    Create eee.txt
+
+commit b7dbfe96ef1aa6520307e2bb141e6e3e46a31889
+Author: JwebD <gkdlfnzo12@naver.com>
+Date:   Wed Jan 15 01:26:42 2025 +0900
+
+    add ddd.txt
+
+commit 60bbb78bb9d17b4a4e49414d363fdca82ac341fb
+Author: JwebD <gkdlfnzo12@naver.com>
+Date:   Wed Jan 15 01:04:23 2025 +0900
+
+    V0.0
 
