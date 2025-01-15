@@ -1,0 +1,66 @@
+--------------------------
+팀원 초대하기
+--------------------------
+1 repository 만들기
+2 위에 settings
+3 왼쪽 collaborators
+4 Add people    닉네임 초대
+
+--------------------------
+branch 룰 만들기
+--------------------------
+1. 내 repogitory에 들어가기
+2. Settings
+3. 왼쪽에 Branches
+4. add classic branch protection rule 누르기
+5. 룰셋 NAME   ==> 룰을 셋팅할 branch와 같은 이름으로 설정
+6. Require a pull request before merging  =  커밋이나 푸쉬할때 승인받아야 하도록 설정
+   Lock branch   관리자가 승인받아줘야 커밋 됨.
+
+--------------------------
+github에서 새 branch에서 작업하고 dev에 merging하는법
+--------------------------
+1 새로운 branch test를 만들고 작업 후 커밋.
+2 상단 Pull requests 클릭
+3 New pull request 클릭
+4 base: dev  <-- compare: test   선택해주고 Create pull request. 
+
+---------------------------------------
+원격에서 로컬로 clone 가져와서 작업
+---------------------------------------
+git clone https://github.com/jungwoogyun/MYREPOSITORY.git
+
+cd 탭키   작업공간으로 이동
+
+git branch -r  	//branch  목록
+
+git switch 김지성	//
+
+**파일 수정 및 추가**
+
+git add *
+
+git commit -m V0.0
+
+git push origin
+
+
+project
+
+1 프로젝트로 사용할 REPOGITORY 에 접속
+2 상단 Projects 
+3 New project
+4 creat project /Featured 에 Team planning 선택 -> Create project
+5 Todo 에 +Add item해주기    //작업해야할 목록
+  ex) 메인페이지 FN UI TEST,  메인페이지 FN 기획,   메인페이지 FN 구현
+6 Todo에서 추가한 item --> In Progress로 드래그앤 드롭 하기.
+7 옮겨진 In Progress 아이템에 마우스 올리면 ... 버튼 활성화
+  -->... 버튼 -> Convert to issue 클릭 -> REPOSITORIES 선택
+8 REPOGITORY로 돌아가서 상단에 Issues 알람이 온걸 확인하고 클릭
+9 추가된 Issues 클릭
+10 우측 Assignees 설정 톱니바퀴 클릭 -> 누구에게 역할을 줄건지 선택
+11 역할 받은 사람은 Issues에서 확인할 수 있고,
+    들어가서 Development 설정칸에 Create a branch하고 작업하면됨.
+ 
+**끝**
+
