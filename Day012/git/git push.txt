@@ -101,7 +101,7 @@ b7dbfe9 add ddd.txt
 60bbb78 V0.0
 
 C:\정처산기공유\새 폴더\test4>git log origin/main
-commit 0ef5371af68d58e6f88c9865ab077e5449285650 (HEAD -> main, origin/main, origin/HEAD)
+commit 0ef5371af68d58e6f88c9865ab077e5449285650 (HEAD -> main, origin/main, origin/HEAD)  //병합됨.
 Author: JiwebD <145487843+JiwebD@users.noreply.github.com>
 Date:   Wed Jan 15 01:48:13 2025 +0900
 
