@@ -1,0 +1,9 @@
+1. repository 새로만들고 master에서 V0.0 master만들고 커밋
+2. 깃 플로우 
+3. develop만들어짐  V0.1 develop 만들고 커밋
+4. develop에서 깃 플로우 새기능 시작 > func1 만들기 > V0.1 feature_func1
+5. develop에서 깃 플로우 새기능 시작 > func2 만들기 > V0.1 feature_func2
+6. func1 > 깃 플로우 > 기능 마무리
+7. func2 > 깃 플로우 > 기능 마무리.
+
+
