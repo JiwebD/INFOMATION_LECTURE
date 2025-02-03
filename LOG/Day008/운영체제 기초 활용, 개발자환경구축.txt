@@ -1,0 +1,7 @@
+개발자 환경 구축
+
+운영체제 기초활용하기
+
+리눅스 설치
+CentOS-7-x86_64-DVD...
+VMware-workstation...

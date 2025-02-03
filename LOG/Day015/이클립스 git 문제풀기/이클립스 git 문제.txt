@@ -1,0 +1,26 @@
+----------------------------------------------------------------------
+문제 풀기.
+----------------------------------------------------------------------
+
+1. Worckspace 경로를 변경(폴더명 : Workspace2)
+
+2. 기본 작업세팅 하기
+- Tomcat 연결
+- DynamicWeb Project생성
+- Java Version 11버전 설정
+- servlet.jar, jsp-api.jar 를 lib 로 이동
+- webapp>index.jsp 생성
+- 동작확인
+
+3. git 설정
+- git init 설정
+- index.jsp 에 내용추가 후 commit 하기(V0.0)
+- branch 생성(dev)
+- dev branch로 전환후 index.jsp 에 내용 수정후 commit(V0.1)
+- branchg 생성(feature/board)
+- feature/board branch로 전환후 index.jsp 에 내용 수정 후 commit(V0.2-board)
+- feature/auth branch로 전환후 index.jsp 에 내용 수정 후 commit(V0.2-auth)
+- feature/board -> dev 로 병합(V0.2-dev board)
+- feature/auth -> dev 로 병합(V0.2-dev auth)
+- dev -> master 로 병합(V0.2 master)
+- 과정에서 발생되는 Conflict는 적절히 수정해서 Merging 해보세요.

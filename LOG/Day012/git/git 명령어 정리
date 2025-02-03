@@ -1,0 +1,353 @@
+
+git생성할 폴더 만들고TEST > 경로 주소창에 cmd 실행 > git init 명령어 입력
+> 생성된 폴더 숨긴항목 표시 > .git 폴더 확인
+------------------------------------------
+git init           : 초기파일 생성
+git add          : SA 에 WD 변경사항 저장
+git commit -m : COMMIT 시점 지정(버전기록)
+git reset         : 이전 버전으로 돌아가기
+
+------------------------------------------
+초기 설정
+------------------------------------------
+>git config --global user.email gkdlfnzo12@naver.com
+>2git config --global user.name JiwebD
+>3git config --global --list
+
+***C:\Users\Administrator 에 저장됨.
+------------------------------------------------
+git cofig --gllobal email이랑 name 저장 안해주면 
+*** Please tell me who you are메시지 뜸
+------------------------------------------------
+
+--------
+생성
+--------
+------------------------
+//01
+------------------------
+C:\정처산기공유\새 폴더>git status
+On branch master          //현재 master 브랜치에 있다는 뜻
+
+No commits yet            //이 저장소에 아직 커밋이 없다.
+
+nothing to commit (create/copy files and use "git add" to track)    //현재 커밋할 변경 사항이 없다.
+
+**새폴더\aaa.txt 만들고 안에 아무거나 입력하고 저장 aaa
+
+C:\정처산기공유\새 폴더>git status
+On branch master        //현재 master 브랜치에 있다는 뜻
+
+No commits yet          //이 저장소에 아직 커밋이 없다.
+
+Untracked files:        //aaa.txt라는 파일이 Git에 의해 추적되지 않는 파일(Untracked File)이다.
+  (use "git add <file>..." to include in what will be committed)  //버전관리목록에 추가할려면 git add사용해라.
+        aaa.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+현재 커밋할 변경 사항이 없으며, 추적되지 않은 파일만 있다.
+------------------------
+//02
+------------------------
+C:\정처산기공유\새 폴더>git add aaa.txt      //버전관리목록(git)에 추가
+
+C:\정처산기공유\새 폴더>git status          //git의 스테이징 영역에 있는 상태
+On branch master
+
+No commits yet
+
+Changes to be committed:          //스테이징 영역에 있는 파일들을 의미 **커밋할 준비가 된 변경 사항**
+  (use "git rm --cached <file>..." to unstage)    //스테이징 영역에서 파일 제거하고싶을때 사
+        new file:   aaa.txt      //새로추가된 파일
+------------------------
+//03 commit
+------------------------
+C:\정처산기공유\새 폴더>git commit -m V0.0    //V0.0 커밋 메시지로 commit
+[master (root-commit) 95f8e26] V0.0        //root-commit  git저장소에서 가장 첫 번째 커밋이란 뜻
+ 1 file changed, 1 insertion(+)    //1개의 파일이 변경  , 변경된 파일에 1줄 추가됨.
+ create mode 100644 aaa.txt
+------------------------
+//04 log
+------------------------
+C:\정처산기공유\새 폴더>git log      //커밋 로그 정보 확인.
+commit 95f8e26ceb231ab44f9d548b09ef8db87ce97135 (HEAD -> master)  //커밋 해시, HEAD 현재 작업중인 커밋
+Author: JwebD <gkdlfnzo12@naver.com>   //커밋 작성한 사람  
+Date:   Tue Jan 14 21:31:22 2025 +0900
+
+    V0.0    //커밋 메시지
+
+C:\정처산기공유\새 폴더>git log --oneline      //간략하게 커밋 정보를 출력해라
+95f8e26 (HEAD -> master) V0.0      //커밋해시 첫 몇자리 표시 고유 식별
+------------------------
+//04 bbb.txt  , ccc.txt 커밋
+------------------------
+**새폴더/bbb.txt파일 만들고 bbb입력**
+C:\정처산기공유\새 폴더>git add *     //*모든 파일 선택 = 현재 디렉토리에 있는 변경된 파일 모두
+
+C:\정처산기공유\새 폴더>git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   bbb.txt
+
+C:\정처산기공유\새 폴더>git commit -m V0.1
+[master 22b3091] V0.1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 bbb.txt
+
+C:\정처산기공유\새 폴더>git log --oneline 
+22b3091 (HEAD -> master) V0.1         //두번째 커밋   현재 master브랜치에서 작업 중인 커밋
+95f8e26 V0.0                          //첫 번째 커밋
+
+**새폴더/ccc.txt파일 만들고 ccc입력**
+
+C:\정처산기공유\새 폴더>git add *
+
+C:\정처산기공유\새 폴더>git commit -m V0.2
+[master d74674d] V0.2
+ 1 file changed, 1 insertion(+)
+ create mode 100644 ccc.txt
+
+C:\정처산기공유\새 폴더>git log --oneline
+d74674d (HEAD -> master) V0.2
+22b3091 V0.1
+95f8e26 V0.0
+------------------------
+//05 reset                    --hard 작업 디렉토리와 스테이징 영역 모두 해당 커밋으로 되돌림.
+------------------------
+C:\정처산기공유\새 폴더>git reset --hard 95f8e26   //현재 브랜치에서 95f8e26 커밋(V0.0)으로 되돌려라.
+HEAD is now at 95f8e26 V0.0              //현재 작업중인 커밋 = V0.2 --> V0.
+------------------------
+//06 reflog                    
+------------------------
+C:\정처산기공유\새 폴더>git log --oneline
+95f8e26 (HEAD -> master) V0.0
+
+C:\정처산기공유\새 폴더>git reflog        //HEAD나 브랜치의 이동 이력. 실수하면 복원할수 있게 정보 제공
+95f8e26 (HEAD -> master) HEAD@{0}: reset: moving to 95f8e26  //HEAD@{0} 가장 최근 상태
+d74674d HEAD@{1}: commit: V0.2                                reset: moving hard사용해서 되돌아갔다.
+22b3091 HEAD@{2}: commit: V0.1
+95f8e26 (HEAD -> master) HEAD@{3}: commit (initial): V0.0    //commit (initial) 초기 커밋
+
+C:\정처산기공유\새 폴더>git status    //reset --hard를 해서 WD/SA가 없는걸 확인할 수있다.
+On branch master
+nothing to commit, working tree clean
+
+C:\정처산기공유\새 폴더>git log --oneline    //reset --hard를 해서 HEAD가 95f8e26 커밋을 가리키고 있다.
+95f8e26 (HEAD -> master) V0.0
+------------------------
+//06 reset     --soft               
+------------------------
+C:\정처산기공유\새 폴더>git reset --hard d74674d   //V0.2로 리셋
+HEAD is now at d74674d V0.2
+
+C:\정처산기공유\새 폴더>git reset --soft 95f8e26    //--soft 커밋만 되돌리고 wd/sa는 남음
+
+C:\정처산기공유\새 폴더>git status
+On branch master
+Changes to be committed:    // --soft 사용했기때문에 bbb.txt   ccc.txt는 스테이징 영역에 남아 커밋 준비된 상태
+  (use "git restore --staged <file>..." to unstage)
+        new file:   bbb.txt
+        new file:   ccc.txt
+
+C:\정처산기공유\새 폴더>git log --oneline
+95f8e26 (HEAD -> master) V0.0            //head는 95f8e26 커밋을 가리킴.
+
+------------------------
+//07 reset     --mixed              
+------------------------
+C:\정처산기공유\새 폴더>git reset --hard d74674d   //V0.2로 리셋
+HEAD is now at d74674d V0.2
+
+C:\정처산기공유\새 폴더>git reset --mixed 95f8e26  //--mixed는 wd는 남기고 sa는 삭제.그리고 head 커밋 이동. 
+
+C:\정처산기공유\새 폴더>git status
+On branch master
+Untracked files:       //git에의해 버전 관리되지 않는 새로운파일. 버전관리 저장소는 wd랑 sa를 포함하는 개념
+  (use "git add <file>..." to include in what will be committed)
+        bbb.txt
+        ccc.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\정처산기공유\새 폴더>git log --oneline
+95f8e26 (HEAD -> master) V0.0       //head가 가리키는 커밋은 V0.2 --> V0.0로 변경
+------------------------
+//08 branch          branch 생성
+------------------------
+C:\정처산기공유\새 폴더>git reset --hard d74674d    
+HEAD is now at d74674d V0.2
+
+C:\정처산기공유\새 폴더>git branch dev    //dev branch 생성
+
+C:\정처산기공유\새 폴더>git branch feature  //feature branch 생성
+------------------------
+//09 branch feature에서 작업
+------------------------
+C:\정처산기공유\새 폴더>git switch feature    //branch feature로 변경
+Switched to branch 'feature'
+
+**새폴더/ddd.txt파일 만들고 ddd입력**
+
+C:\정처산기공유\새 폴더>git add *    //변경사항 스테이징에 추가
+
+C:\정처산기공유\새 폴더>git commit -m V0.3  //커밋
+[feature f06ff37] V0.3
+ 1 file changed, 1 insertion(+)
+ create mode 100644 ddd.txt
+------------------------
+//10 merge   병합. dev에 feature 병합
+------------------------
+C:\정처산기공유\새 폴더>git switch dev    //dev branch로 변경
+Switched to branch 'dev'
+
+C:\정처산기공유\새 폴더>git merge feature  //feature를 dev에 병합.
+Updating d74674d..f06ff37
+Fast-forward
+ ddd.txt | 1 +           
+ 1 file changed, 1 insertion(+)
+ create mode 100644 ddd.txt
+------------------------
+//11 merge     dev branch에서 aaa.txt 내용 추가하고 커밋.
+------------------------
+**aaa.txt 에 dev에서 작업 입력하고 저장**
+
+C:\정처산기공유\새 폴더>git add *
+
+C:\정처산기공유\새 폴더>git commit -m V0.4
+[dev 7d11b37] V0.4
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+------------------------
+//12 merge     feature branch에서 aaa.txt 내용 추가하고 커밋.
+------------------------
+C:\정처산기공유\새 폴더>git switch feature    //branch feature로 변경
+Switched to branch 'feature'
+
+**aaa.txt 에 feature에서 작업 입력하고 저장**
+
+C:\정처산기공유\새 폴더>git add *
+
+C:\정처산기공유\새 폴더>git commit -m "V0.4 by feature"
+[feature e3e7cc9] V0.4 by feature
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+------------------------
+//13 merge     dev에 feature 병합
+------------------------
+C:\정처산기공유\새 폴더>git switch dev
+Switched to branch 'dev'
+
+C:\정처산기공유\새 폴더>git merge feature
+Auto-merging aaa.txt                      // git이 자동으로 aaa.txt파일을 병합하려고 시도함.
+CONFLICT (content): Merge conflict in aaa.txt  //병합 충돌(conflict) 발생 두개의 브랜치에서 같은 파일 수정
+Automatic merge failed; fix conflicts and then commit the result.  //자동 병합 실패 충돌 해결한 후에 수동으로                                                                      완료해야함.
+
+***aaa.txt내용을 확인해보니 이래 나옴.***
+<<<<<<< HEAD                  // 현제 작업중인 HEAD dev 내용.
+dev에서 작업
+=======
+feature에서 작업              //feature에서 작업한 내용.
+>>>>>>> feature
+
+---->  feature 작업 내용으로 할 거니까  "feature에서 작업"만 남기고 다 지워주고 저장 => 수동 병합 완료.
+
+C:\정처산기공유\새 폴더>git add *
+
+C:\정처산기공유\새 폴더>git commit        //
+[dev 2f6c066] Merge branch 'feature' into dev
+
+C:\정처산기공유\새 폴더>git log -oneline
+fatal: unrecognized argument: -oneline
+
+C:\정처산기공유\새 폴더>git log --oneline
+2f6c066 (HEAD -> dev) Merge branch 'feature' into dev    //dev에 feature 내용이 merging 됐다.
+e3e7cc9 (feature) V0.4 by feature
+7d11b37 V0.4
+f06ff37 V0.3
+d74674d (master) V0.2
+22b3091 V0.1
+95f8e26 V0.0
+
+------------------------
+//13 merge     master에 dev 내용 병합
+------------------------
+C:\정처산기공유\새 폴더>git switch master
+Switched to branch 'master'
+
+C:\정처산기공유\새 폴더>git merge dev
+Updating d74674d..2f6c066
+Fast-forward
+ aaa.txt | 2 +-
+ ddd.txt | 1 +
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+ create mode 100644 ddd.txt
+
+C:\정처산기공유\새 폴더>
+git log
+git log --oneline
+
+
+
+------------------------------------------
+리셋
+--hard     WD(x)    SA(x)  head(이동)
+--soft      WD(o)    SA(o)  head(이동)
+--mixed   WD(o)    SA(x)  head(이동)
+------------------------------------------
+  되돌리기
+  - git reset --soft
+  - git reset --hard
+  - git option
+    - hard : 돌아간 커밋 이후의 변경 이력을 전부 삭제
+    - soft : 변경 이력 삭제, 변경 내용은 남아있음, 인덱스도 유지(SA에 저장돼있음)(git add까지 되어 있음) 
+    - mixed : 변경 이력 삭제, 변경 내용은 남이있음, 인덱스 초기화(git add가 안되어 있는 상태)
+
+
+
+------------------------------------------------
+문제
+0 새폴더에서 git init 명령어 사용
+git init
+
+1 aaa.txt 파일을 추가하고 내용입력(아무거나) 
+aaa.txt 새로만들기
+
+
+2 SA 에 추가후 Commit(message V0.0)
+git add *
+git commit -m V0.0
+
+2 bbb.txt 파일을 추가하고 내용입력(아무거나) 
+bbb.txt 새로만들고 bbb 입력
+
+3 SA 에 추가후 Commit(message V0.1)
+git add *
+git commit -m V0.1
+
+4 ccc.txt 파일을 추가하고 내용입력(아무거나) 
+ccc.txt 새로만들고 ccc입력
+
+5 SA 에 추가후 Commit(message V0.2)
+git add *
+git commit -m V0.2
+
+6 V0.0 으로 --hard 옵션 이동 (확인 - WD/SA/HEAD)
+git log --oneline
+3566822 (HEAD -> master) V0.2
+4723beb V0.1
+10d3402 V0.0
+
+git reset --hard 10d3402
+
+git log                      ->head 확인
+git log --oneline으로     -> head 확인
+
+7 V0.2 으로 복귀(reflog)
+
+8 V0.1 으로 --soft 옵션 이동 (확인 - WD/SA/HEAD)
+
+9 V0.2 으로 복귀(reflog)
+
+10 V0.0 으로 --mixed 옵션 이동 (확인 - WD/SA/HEAD)
+

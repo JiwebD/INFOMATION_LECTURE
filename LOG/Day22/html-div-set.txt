@@ -1,0 +1,13 @@
+    <div data-username="user1234">계정명</div>
+    <div data-address="대구">주소</div>
+    <div data-phone="01022223333">연락처</div>
+
+data-    : 중요하지 않은 정보 입력
+
+    <script>
+        const Els = document.querySelectorAll('div');
+        Els.forEach(el=>{console.log(el.dataset)})
+    </script>
+
+data set 정보 콘솔에 표시
+

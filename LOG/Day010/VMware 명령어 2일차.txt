@@ -1,0 +1,169 @@
+d        rwxr-xr-x       4           root  root 
+파일타입 허가권  하위폴더 개수  소유권
+
+ls : 파일&디렉토리 목록 출력
+-a : 모두보기
+-l : 자세히보기
+-R : 하위까지 보기
+-d : 디렉토리 보기
+
+조합해서 사용 할 수 있음
+ex)
+ls /etc/
+ls -l /etc/		법칙 1 [명령어][옵션][타겟]
+ls -al /etc/		법칙 2	명령어의 옵션은 조합이 가능하다
+ls -Ral /etc/
+cd /etc
+ls -l			법칙 3 상대경로에서의 작업은 생략이 가능하다.
+ls -ld /etc 
+
+
+mkdir(Make Directory) : 디렉토리 생성 명령어
+
+mkdir /hom/test1
+
+-p 상위디렉토리 포함 생성
+mkdir -p /home/a/b/c
+
+man mkdir 명령어 설명
+q로 나가기
+
+
+touch : 파일생성, 파일의 시간을 변경
+touch /touch/1 절대경로
+touch 2  or touch ./2  상대경로
+touch /touch/1 /touch/2 /touch/3  절대경로 여러 파일생성
+touch 1 2 3   상대경로 여러 파일생성
+
+시간 변경 -d
+touch -d  00:00
+
+날짜 변경 -t
+touch -t YYYYMMDDHHmmss
+
+
+============cptest (시험)===========
+mkdir /cptest    cptest 디렉토리 생성
+cd /cptest        경로로 이동
+pwd               경로 확인
+
+cp /touch/1 /cptest/1      복사
+/touch/1 파일을 복사 ->    /cptest/1
+cp /touch/2 /cptest/       # 생략가능
+cp /touch/3 /cptest/sam     이름 변경가능
+
+파일 보존복사 -p : 날짜, 시간 
+cp -p /touch/2 /cptest/p2
+
+디렉토리 복사 -r
+cp -r /touch/a /cptest/a
+
+//cptest라는 상위폴더가 없을시 
+cp -r /touch/a /cptest  명령하면 cptest폴더 만들어지고 a도 복사됨.
+
+
+
+
+///////////////////////문제///////////////////
+
+1. /final 이라는 디렉토리 생성
+mkdir /final
+cd /final
+
+2. /final 디렉토리에 12, 34, 56 이라는 파일생성
+touch 12 34 56
+ls -l
+
+3. 34파일의 시간을 1999년 01월 01일 12:00 으로 변경
+touch -t 199901011200 34
+ls -l
+
+4. /back 이라는 디렉토리 생성
+mkdir /back
+
+5. /final 의 12 ,56 파일을 /back  디렉토리에 복사
+cp /final/12 /final/56 /back
+ls -l /back
+
+6. /final 의 34 파일을 /back 디렉토리에 보존복사
+cp -p /final/34 /back
+ls -l /back
+
+
+
+1. /etc/login.defs /etc/passwd /boot/grub2/grub.cfg 파일을 확인하고
+   3개의 파일 /backup 디렉토리 생성한 뒤 복사
+mkdir /backup
+cp /etc/login/defs  /etc/passwd \(역슬래쉬하면 칸바꾸기)
+> /boot/grub2/grub.cfg  /backup
+ls -l /backup
+
+2. /backup에 있는 3개의 파일
+   /backup/test 디렉토리에 각각 login pass grub 란 이름으로 이름변경 복사
+mkdir /backup/test
+cd /backup
+ls -l
+
+cp login.defs test/login
+cp passwd test/pass
+cp grub.cfg test/grub
+ls -l test
+
+3. /backup에 test1 이라는 파일 ,
+	/backup/test 에 test2 라는 파일을 한줄명령어로 생성
+touch /backup/test1 /backup/test/test2
+ls -l /backup
+ls -l /backup/test
+
+4. /backup/test 디렉토리를
+	 /home/test/c/d/linux란 이름이 되도록  이름변경 보존 복사
+mkdir -p /home/test/c/d
+cp -pr /backup/test /home/test/c/d/linux
+cd /home
+ls -l /backup
+
+5. /home으로 이동(cd /home) 한뒤
+	경로를 변경하지 않고 /backup안에 있는 파일들 4개를 /home/test/c/d/linux
+	 디렉토리에 한줄명령으로 보존복사 (이름변경및 디렉토리 복사 금지)
+
+cp -p /backup/grub.cfg /backup/login.defs /backup/passwd /backup/test1 /home/test/c/d/linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+mv : 이동 
+
+rm : 삭제
+
+:: cp보다 높은 권한의 명령어 왜냐면 삭제기능이 있음
+
+
+
+cat : 문서 전체 출력
+
+cat /etc/passwd
+cat -n /etc/passwd  행 번호 출력
+
+head : 위에서부터 10줄
+head /etc/passwd
+head -5 /etc/passwd  5줄 출력
+
+tail : 맨아래 기준 위로 10번째 행부터 아래로 10줄 출력
+tail /etc/passwd
+tail -5 /etc/passwd 5줄
+
+
+more : 화면크기만큼 출력
+more /etc/passwd
+
+
+

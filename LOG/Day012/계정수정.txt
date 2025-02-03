@@ -1,0 +1,19 @@
+유저 계정 생성
+-->	tail -5 /etc/passwd
+	tail -5 /etc/shadow
+	tail -5 /etc/group
+	ls -l /home
+	ls -l /var/spool/mail/
+
+
+
+userdel 계정명
+
+/
+/home 디렉터리
+/var/spool/mail/ 
+빼고 삭제
+
+
+userdel -r 계정명
+모두 삭제

@@ -1,0 +1,62 @@
+----------------------
+branch dev 생성
+-------------------------
+git init
+
+git add aaa
+
+git commit -m "V0.0 aaa.txt add"
+
+git log --oneline
+
+git branch
+
+git branch dev
+
+git checkout dev
+
+git branch
+
+aaa.txt 내용 변경
+
+dev.txt 생성
+
+git status
+
+git add *
+
+git commit -m "V0.1 dv's modified"
+
+git log --oneline
+
+git branch
+
+git switch master
+
+git log --oneline
+
+git switch dev
+
+git log --oneline
+
+--------------------------
+branch dev  --> branch master 병합
+---------------------------
+
+
+
+
+
+---------------------------
+푸쉬
+---------------------------
+
+
+git clone   원격저장소에서 프로젝트 전체를 로컬 저장소(내가쓰는 데스크탑)에 가져오기
+git pull     원격저장소의 변경내용을 로컬 저장소에 가져오기
+git push    로컬 저장소의 변경 내용을 원격 저장소에 업로드
+git fetch    원격 저장소의 변경 사항을 가져옵니다(병합은 하지 않음).
+
+
+Add a README file 체크 하지 말기
+
