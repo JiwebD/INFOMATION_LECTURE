@@ -1,0 +1,53 @@
+-----------------
+01Flex
+-----------------
+/* 수평배치 center,right,left,space-between,space-evenly,space-around */
+justify-content: center;
+/* item간 여백지정없는 설정시 gap option 사용가능 */
+gap: 10px;
+
+/* 수직배치 start,end,center,flex-start,flex-end */
+align-items: ;
+
+
+/* 방향지정 : row , column , row-reverse, column-reverse*/
+flex-direction: row-reverse;
+
+row 가로 = 행
+column 세로 = 열
+
+reverse
+반대 순서로
+
+/* flex-wrap */
+
+
+/* height 설정 */
+부모기준으로 높이 설정
+align-self: stretch;
++
+height: 50px;
+하면 부모기준 상단부터 50px 지정
+
+align-self: flex-end;
+바닥 위치
+
+
+width:;
+부모 범위를 벗어나지 않도록 조정됨.
+
+height:;
+부모 범위를 벗어남.
+
+부모 height를 지정 안하면
+자식 범위에 맞게 부모 범위가 조정됨.
+
+
+/* flex 아이템의 증가 비율 설정 0(기본값-증가하지 않음) */
+flex-grow: 2;
+            
+/* flex 아이템의 감소 비율 설정 (0 - 감소하지 않음 1: 기본값 너비에따라 감소) */
+flex-shrink: 0;
+/* 기본크기 지정  = flex-shrink:0;을 설정한 상태로 basis:200;을하면
+   200미만으로 줄어들면 wrapping 처리한다 = 아래로 줄을 바꾼다.*/
+flex-basis: 200px;
