@@ -1,0 +1,38 @@
+--------------------------
+1MQ
+--------------------------
+데스크탑 width : 1024px 이상
+
+태블릿 758px - 1024px
+
+
+모바일 400px ~ 700px
+
+미디어 쿼리 장치 옵션
+
+         all : 모든 미디어 유형에 적용
+         print : 인쇄를 위한 미디어 타입
+         screen : 화면 기반의 미디어 타입(주로 컴퓨터, 태블릿...)
+         speech : 음성 출력 장치를 위한 미디어 타입
+
+media all and (max-width:1024px){
+	div{background-color: green;}
+}
+
+
+--------------------------
+2MQ
+--------------------------
+데스크탑, 태블릿, 모바일 css 파일을 각각 만들어서
+link를 head에 넣어주면 각각 css 작업하기 편하다.
+    <!-- common -->
+    <link rel="stylesheet" href="./css/common.css">
+
+    <!-- desktop -->
+    <link rel="stylesheet" href="./css/desktop.css">
+    
+    <!-- tablet -->
+    <link rel="stylesheet" href="./css/tablet.css" media="all and (max-width:1024px)">
+    
+    <!-- mobile -->
+    <link rel="stylesheet" href="./css/mobile.css" media="all and (max-width:380px)">
