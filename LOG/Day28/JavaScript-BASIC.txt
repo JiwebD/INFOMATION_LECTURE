@@ -1,0 +1,171 @@
+
+JavaScript란 웹브라우저 기능 사용하는 언어.
+
+인터프리터 : 콘솔창에 명령어 입력하면 한 줄씩 읽고 실행하는 것
+컴파일 프로그래밍 언어 : 전체 코드를 미리 컴파일한 후 실행
+
+일급함수 지원
+
+
+자바스크립트 특징
+
+데이터 저장가능
+
+데이터의 특징
+선 저장 후 처리
+
+
+escape 벗어나다
+
+그래픽 : a-z !... 눈에 보이는 문자
+제어문자: 눈에 보이지 않는 제어 명령어 역슬래시n 등
+
+------------------------
+01JS
+------------------------
+<button onClick="alert('helloworld')">BTN1</button>
+버튼 클릭시 입력 내용 메시지로 출력
+
+<button onClick="alert(10+20)">BTN1</button>
+함수 기능도 가능
+
+<a href="javascript:void(0)">TEST1</a>
+a태그 로 javascript사용할려면,
+앞에 javascript:를 붙여야 한다.
+
+:void(0) 아무것도 실행되지 않음
+:alert(10+20) 입력 결과값 메시지 실행
+:console.log(10+20) 콘솔에 입력 결과값 시행
+
+
+    <script>
+        const obj = {"name":"aaa","age":"55"};
+    </script>
+
+const
+const를 사용해서 변수를 선언하면 재할당,
+재선언 시 모두 오류가 발생한다. 
+따라서 const는 변수의 값이 변하지 않는 상황에 사용하는 것이 바람직하다.
+
+
+obj
+이름 부여
+
+ = {"name":"aaa","age":"55"};
+obj이름의 const자료형에 데이터 대입
+
+-------------------------
+02JS
+-------------------------
+    <script>
+        document.write("<h1>HELLOWORLD</h1>");
+        document.write("<h2>HELLOWORLD</h2>");
+        document.write("<h3>HELLOWORLD</h3>");
+    </script>
+
+(dom약자)
+document라는 객체안에 있는 write 기능을 사용
+
+button으로 사용하면 클릭시 내용이 덮어씌어져서 잘 안씀
+<button onclick="document.write('ABCD')">ADD</button>
+
+
+------------------------
+03JS
+------------------------
+
+<div id="d1">HELLO WORLD</div>
+
+<script> 
+dom 객체 안에 특정 ID를 가지고 있는 자료를 가져오는 명령어
+const d1El = document.getElementByID('d1')
+console.log(d1El);        콘솔로그에 d1El 자료 출력
+d1El.innerHTML='ABCD';   d1El의 내용을 ABCD로 변경
+
+
+</script> 
+
+
+------------------------
+04JS
+------------------------
+console.log("")
+("HELLOWRORLD") 문자열
+(10+20) 함수
+('HELLOWRORLD') 문자열  js에서는 홀따움표도 문자열로 처리
+(``) 백틱
+
+조건식  -  물어봤을때 기계가 맞다 아니다 알려주는 식 
+(true) 
+(false)
+
+(null) 오브젝트 - 공간을 쓰고있다.
+
+(undefined) 정의 공간을 차지 하지 않는다.
+
+정의와 선언의 차이
+
+선언 - 선언을 했지만 지키지 않아도 되는 것
+정의 - 정의를 했으면 지켜야하는 것
+
+        let test;                   test이름의공간을 차지하는게 없음
+        console.log(typeof test)
+        let test2 = null;          공간을 차지하고 있음
+        console.log(typeof test2);
+
+if문 사용시 둘다 콘솔창에
+else값(false) 값 출력 
+        if(test2){
+            console.log("test2 TRUE") 
+        }
+        else{
+            console.log("test2 FALSE")
+        }
+        
+        if(test){
+            console.log("test TRUE") 
+        }
+        else{
+            console.log("test FALSE")
+        }
+
+Boolean 값: true / false
+if문 및 논리 연사자에서 자동 변환됨
+Truthy/Falsy 개념을 이해하면 조건문을 더 간결하게 작성할 수 있음!
+
+javascript에서 falsy 값
+	false
+	0
+	""
+	null
+	undefined
+	NaN
+	-0
+
+javascript에서 truthy 값
+	false가 아닌 모든 값
+
+
+------------------------
+05JS
+------------------------
+
+    문서 읽는 순서가 html> js이기때문에
+	div가 script아래에 있으면 작동을 안한다.
+	script 위에 div가 있어야 작동한다.
+
+    하지만 js 파일을 따로 만들고 defer을 사용해서 불러오면,
+    html문서가 모두 로딩된 후에 js를 실행하기 때문에 위치가 상관없다.
+    <script defer src="./js/main.js"></script>
+
+    <div class="box" style="width: 50px; height: 50px; background-color: royalblue;" >
+    </div>
+    <script>
+        const boxEl = document.querySelector('.box');
+        boxEl.addEventListener('click',()=>{
+            boxEl.style.backgroundColor='black'
+        })
+    </script>
+
+querySelector()
+CSS 선택자를 사용하여 DOM 요소를 찾는 메서드
