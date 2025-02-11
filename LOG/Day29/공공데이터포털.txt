@@ -1,0 +1,21 @@
+js 오픈 api 사용하기
+
+
+구글에 공공데이터포털 검색
+
+대구광역시 맛집 검색
+
+오픈 api 
+
+바로가기
+
+pretty print 적용 체크
+
+ctrl + a
+
+ctrl + c
+
+js폴더생성
+js 중구 맛집.js 파일 생성
+const 중구맛집 =
+ctrl + v 
